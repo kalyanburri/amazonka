@@ -121,6 +121,7 @@ data CloudWatchRegion
   | CWRApNortheast2
   | CWRApNortheast3
   | CWRApSouth1
+  | CWRApSouth2
   | CWRApSoutheast1
   | CWRApSoutheast2
   | CWRCaCentral1
@@ -142,6 +143,7 @@ instance FromText CloudWatchRegion where
         "ap-northeast-2" -> pure CWRApNortheast2
         "ap-northeast-3" -> pure CWRApNortheast3
         "ap-south-1" -> pure CWRApSouth1
+        "ap-south-2" -> pure CWRApSouth2
         "ap-southeast-1" -> pure CWRApSoutheast1
         "ap-southeast-2" -> pure CWRApSoutheast2
         "ca-central-1" -> pure CWRCaCentral1
@@ -155,7 +157,7 @@ instance FromText CloudWatchRegion where
         "us-west-1" -> pure CWRUsWest1
         "us-west-2" -> pure CWRUsWest2
         e -> fromTextError $ "Failure parsing CloudWatchRegion from value: '" <> e
-           <> "'. Accepted values: ap-northeast-1, ap-northeast-2, ap-northeast-3, ap-south-1, ap-southeast-1, ap-southeast-2, ca-central-1, eu-central-1, eu-west-1, eu-west-2, eu-west-3, sa-east-1, us-east-1, us-east-2, us-west-1, us-west-2"
+           <> "'. Accepted values: ap-northeast-1, ap-northeast-2, ap-northeast-3, ap-south-1, ap-south-2, ap-southeast-1, ap-southeast-2, ca-central-1, eu-central-1, eu-west-1, eu-west-2, eu-west-3, sa-east-1, us-east-1, us-east-2, us-west-1, us-west-2"
 
 instance ToText CloudWatchRegion where
     toText = \case
@@ -163,6 +165,7 @@ instance ToText CloudWatchRegion where
         CWRApNortheast2 -> "ap-northeast-2"
         CWRApNortheast3 -> "ap-northeast-3"
         CWRApSouth1 -> "ap-south-1"
+        CWRApSouth2 -> "ap-south-2"
         CWRApSoutheast1 -> "ap-southeast-1"
         CWRApSoutheast2 -> "ap-southeast-2"
         CWRCaCentral1 -> "ca-central-1"
@@ -598,6 +601,7 @@ data VPCRegion
   | ApNortheast2
   | ApNortheast3
   | ApSouth1
+  | ApSouth2
   | ApSoutheast1
   | ApSoutheast2
   | CaCentral1
@@ -620,6 +624,7 @@ instance FromText VPCRegion where
         "ap-northeast-2" -> pure ApNortheast2
         "ap-northeast-3" -> pure ApNortheast3
         "ap-south-1" -> pure ApSouth1
+        "ap-south-2" -> pure ApSouth2
         "ap-southeast-1" -> pure ApSoutheast1
         "ap-southeast-2" -> pure ApSoutheast2
         "ca-central-1" -> pure CaCentral1
@@ -634,7 +639,7 @@ instance FromText VPCRegion where
         "us-west-1" -> pure UsWest1
         "us-west-2" -> pure UsWest2
         e -> fromTextError $ "Failure parsing VPCRegion from value: '" <> e
-           <> "'. Accepted values: ap-northeast-1, ap-northeast-2, ap-northeast-3, ap-south-1, ap-southeast-1, ap-southeast-2, ca-central-1, cn-north-1, eu-central-1, eu-west-1, eu-west-2, eu-west-3, sa-east-1, us-east-1, us-east-2, us-west-1, us-west-2"
+           <> "'. Accepted values: ap-northeast-1, ap-northeast-2, ap-northeast-3, ap-south-1, ap-south-2, ap-southeast-1, ap-southeast-2, ca-central-1, cn-north-1, eu-central-1, eu-west-1, eu-west-2, eu-west-3, sa-east-1, us-east-1, us-east-2, us-west-1, us-west-2"
 
 instance ToText VPCRegion where
     toText = \case
@@ -642,6 +647,7 @@ instance ToText VPCRegion where
         ApNortheast2 -> "ap-northeast-2"
         ApNortheast3 -> "ap-northeast-3"
         ApSouth1 -> "ap-south-1"
+        ApSouth2 -> "ap-south-2"
         ApSoutheast1 -> "ap-southeast-1"
         ApSoutheast2 -> "ap-southeast-2"
         CaCentral1 -> "ca-central-1"

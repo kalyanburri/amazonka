@@ -1106,6 +1106,7 @@ data RegionName
   = ApNortheast1
   | ApNortheast2
   | ApSouth1
+  | ApSouth2
   | ApSoutheast1
   | ApSoutheast2
   | EuCentral1
@@ -1123,6 +1124,7 @@ instance FromText RegionName where
         "ap-northeast-1" -> pure ApNortheast1
         "ap-northeast-2" -> pure ApNortheast2
         "ap-south-1" -> pure ApSouth1
+        "ap-south-2" -> pure ApSouth2
         "ap-southeast-1" -> pure ApSoutheast1
         "ap-southeast-2" -> pure ApSoutheast2
         "eu-central-1" -> pure EuCentral1
@@ -1133,13 +1135,14 @@ instance FromText RegionName where
         "us-west-1" -> pure UsWest1
         "us-west-2" -> pure UsWest2
         e -> fromTextError $ "Failure parsing RegionName from value: '" <> e
-           <> "'. Accepted values: ap-northeast-1, ap-northeast-2, ap-south-1, ap-southeast-1, ap-southeast-2, eu-central-1, eu-west-1, eu-west-2, us-east-1, us-east-2, us-west-1, us-west-2"
+           <> "'. Accepted values: ap-northeast-1, ap-northeast-2, ap-south-1, ap-south-2, ap-southeast-1, ap-southeast-2, eu-central-1, eu-west-1, eu-west-2, us-east-1, us-east-2, us-west-1, us-west-2"
 
 instance ToText RegionName where
     toText = \case
         ApNortheast1 -> "ap-northeast-1"
         ApNortheast2 -> "ap-northeast-2"
         ApSouth1 -> "ap-south-1"
+        ApSouth2 -> "ap-south-2"
         ApSoutheast1 -> "ap-southeast-1"
         ApSoutheast2 -> "ap-southeast-2"
         EuCentral1 -> "eu-central-1"

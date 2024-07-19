@@ -678,6 +678,7 @@ data Region
     | Tokyo           -- ^ Asia Pacific ('ap-northeast-1').
     | Seoul           -- ^ Asia Pacific ('ap-northeast-2').
     | Mumbai          -- ^ Asia Pacific ('ap-south-1').
+    | Hyderabad       -- ^ Asia Pacific ('ap-south-2').
     | Singapore       -- ^ Asia Pacific ('ap-southeast-1').
     | Sydney          -- ^ Asia Pacific ('ap-southeast-2').
     | SaoPaulo        -- ^ South America ('sa-east-1').
@@ -702,6 +703,7 @@ instance FromText Region where
         "ap-northeast-1"     -> pure Tokyo
         "ap-northeast-2"     -> pure Seoul
         "ap-south-1"         -> pure Mumbai
+        "ap-south-2"         -> pure Hyderabad
         "ap-southeast-1"     -> pure Singapore
         "ap-southeast-2"     -> pure Sydney
         "sa-east-1"          -> pure SaoPaulo
@@ -724,6 +726,7 @@ instance ToText Region where
         Tokyo           -> "ap-northeast-1"
         Seoul           -> "ap-northeast-2"
         Mumbai          -> "ap-south-1"
+        Hyderabad       -> "ap-south-2"
         Singapore       -> "ap-southeast-1"
         Sydney          -> "ap-southeast-2"
         SaoPaulo        -> "sa-east-1"
